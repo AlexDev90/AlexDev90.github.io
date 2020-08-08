@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Us</title>
+  <!-- CSS -->
+  <link href="style.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="form.js"></script>
+  <!-- ICON PACK -->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<!-- NAVIGATION STARTS -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href class="drop">Shop</a>
+      <div class="dropdown-content">
+        <a href="#coffee">Coffee</a>
+        <a href="#tea">Tea</a>
+      </div>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+<!-- NAVIGATION ENDS -->
+
+<header class="header">
+  <img src="images/banner.jpg" class="banner-img">
+  <br>
+  <img src="images/logo.svg" class="logo-img">
+  <h2>Bear Tea & Coffee</h2>
+  <p>
+    A one-stop online shop for your daily caffeine needs.<br>
+    High quality coffee beans and coffee.
+  </p>
+</header>
+
+<body>
+  <div class="wrapper">
+    <div class="main">
+      
+      <!-- FORM BEGINS -->
+      <div class="contact">
+        <h1>Contact Us</h1>
+        <form action="https://httpbin.org/post" target=”_blank” method="POST" name="WEB222-form" onsubmit="return validateForm();">
+          <label for="fname">First Name: </label>
+          <input type="text" id="fname" name="fname" maxlength="20" pattern="[A-Za-z\s]+" required>
+          <label for="lname">Last Name: </label>
+          <input type="text" id="lname" name="lname" maxlength="20" pattern="[A-Za-z\s]+" required>
+          <label for="email">Email: </label>
+          <input type="email" id="email" name="email" required>
+          <label for="address">Address: </label>
+          <input type="text" id="address" name="address" pattern="\w+" required> <br>
+          <label for="city">City: </label>
+          <input list="cities" name="city" id="city" pattern="[A-Za-z\s]+" required> 
+          <datalist id="cities">
+            <option value="Toronto">
+            <option value="Ottawa">
+            <option value="Calgary">
+            <option value="Edmonton">
+            <option value="Vancouver">
+            <option value="Montreal">
+          </datalist>
+          <br>
+          <label for="postalcode">Postal Code: </label>
+          <input type="text" name="postalcode" id="postalcode" maxlength="6" pattern="^([A-Za-z]\d[A-Za-z]\d[A-Za-z]\d)" placeholder="A1A1A1" required> <br>
+
+          <label for="regard">Regarding: </label><br>
+          <input type="radio" id="question" name="regard" value="question" required onclick=hide(); >
+          <label for="question">Question</label><br>
+          <input type="radio" id="comment" name="regard" value="comment" required onclick=hide();>
+          <label for="comment">Comment</label><br>
+          <input type="radio" id="order-problem" name="regard" value="order-problem" required onclick=visible();>
+          <label for="order-problem">Order Problem</label>
+          <div id="hidden">
+            <br>
+            <label for="orderno">Order Number</label>
+            <input type="text" id="orderno" name="orderno" placeholder="ABCD-1234">
+          </div>
+          <br>
+          <label for="text">Message</label>
+          <br>
+          <textarea id="subject" name="subject" placeholder="Please be as descriptive as possible"
+            style="height:200px" required></textarea>
+          <input type="hidden" name="myname" id="myname" value="Shin Ae Jang">
+          <div id="errors"></div> 
+          <input type="submit" value="Send">
+          <input type="reset" value="Clear" onclick="clearErrors();">
+        </form>
+      </div>
+      <!-- FORM ENDS -->
+
+    </div>
+  </div>
+</body>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Bear Tea & Coffee</p>
+    <div class="column" >
+      Connect with us
+      <div class="social-media">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/" target="_blank">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/?hl=en" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.pinterest.com/" target="_blank">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+        </ul>
+    </div>
+    </div>
+    <div class="column">
+      <p>Subscribe to our newsletter: </p>          
+      <form action="https://formspree.io/mnqgweev" target=”_blank” method="POST" name="newsletter">
+          <input type="email" placeholder="e-mail" name="mail" required>
+          <label>
+          <input type="submit" value="Subscribe">
+      </form>
+  </div>
+</footer>
+<!-- FOOTER -->
+
+</html>
